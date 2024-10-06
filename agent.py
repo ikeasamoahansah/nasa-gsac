@@ -1,8 +1,14 @@
 from groq import Groq
+import os
+import dotenv
+
+dotenv.load_dotenv()
+
+KEY = os.getenv("GROQ_API_KEY")
 
 # Initialize the Groq client with your API key
 client = Groq(
-    api_key="GROQ API KEY"  # replace with your API key
+    api_key=KEY  # replace with your API key
 )
 
 # Function to interpret and analyze the weather data using AI
