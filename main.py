@@ -10,12 +10,16 @@ from streamlit_folium import folium_static
 import numpy as np
 from agent import analyze_weather_data
 from ghana_nlp import GhanaNLP
+import dotenv
+import os
+
+dotenv.load_dotenv()
 
 
 
 # Meteomatics API credentials
-API_USERNAME = "larbi_prince"
-API_PASSWORD = "4mSPD335fg"
+API_USERNAME = os.getenv("API_USERNAME")
+API_PASSWORD = os.getenv("API_PASSWORD")
 
 @st.cache_data
 def get_weather_data(start_date, end_date, parameters, lat, lon):
